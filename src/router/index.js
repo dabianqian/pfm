@@ -8,6 +8,8 @@ VueRouter.prototype.push = function push(location) {
 }
 
 import signIn from '../views/signIn.vue'
+import signUp from '../views/signUp.vue'
+
 const router = new VueRouter({
     routes: [
         {
@@ -18,6 +20,11 @@ const router = new VueRouter({
         {
             path:'/signIn',
             component: signIn
+        }
+        ,
+        {
+            path: '/signUp',
+            component: signUp
         }
     ]
 })
