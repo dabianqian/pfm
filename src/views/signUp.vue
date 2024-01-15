@@ -99,9 +99,17 @@ export default {
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    alert('submit!');
+                    this.$notify({
+                        title: '成功',
+                        message: '注册成功',
+                        type: 'success'
+                    });
+                    this.$router.push('/signIn');
                 } else {
-                    console.log('error submit!!');
+                    this.$notify.error({
+                        title: '错误',
+                        message: '这是一条错误的提示消息'
+                    });
                     return false;
                 }
             });
