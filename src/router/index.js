@@ -7,10 +7,19 @@ VueRouter.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err)
 }
 
+import signUp from '../views/signUp.vue'
+
 const router = new VueRouter({
     routes: [
-
-
+        {
+            path: '/',
+            redirect: '/signUp'
+        }
+        ,
+        {
+            path: '/signUp',
+            component: signUp
+        }
     ]
 })
 
